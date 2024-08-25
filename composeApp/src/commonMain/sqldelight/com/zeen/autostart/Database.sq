@@ -1,0 +1,21 @@
+CREATE TABLE Application (
+    id INTEGER PRIMARY KEY,
+    path TEXT NOT NULL,
+    name TEXT NOT NULL
+);
+
+removeAll:
+DELETE FROM Application;
+
+removeById:
+DELETE FROM Application WHERE id = ?;
+
+selectAll:
+SELECT * FROM Application;
+
+checkNameOrPathExists:
+SELECT count(*) FROM Application WHERE name = ? OR path = ?;
+
+insert:
+INSERT INTO Application (name,path) VALUES (?, ?);
+
